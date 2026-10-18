@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+<title>HerbStat Support</title>
+<style>
+:root{
+  --paper:#f7f8fa; --card:#fff; --ink:#10161f; --ink2:#55606d; --ink3:#8a949f;
+  --rule:#e3e7ed; --accent:#0b6e6a;
+}
+@media (prefers-color-scheme: dark){:root{
+  --paper:#0d1117; --card:#141a22; --ink:#e9edf2; --ink2:#9aa5b1; --ink3:#6c7783;
+  --rule:#242c37; --accent:#39b3ab;
+}}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font:400 17px/1.6 -apple-system,BlinkMacSystemFont,system-ui,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+main{max-width:38rem;margin:0 auto;padding:48px 20px 80px}
+h1{font-size:30px;line-height:1.15;letter-spacing:-.022em;margin:0 0 6px;font-weight:600}
+.sub{color:var(--ink3);font-size:14.5px;margin:0 0 34px}
+h2{font-size:19px;line-height:1.3;letter-spacing:-.014em;margin:34px 0 10px;font-weight:600}
+p{margin:0 0 14px;color:var(--ink2)}
+p.lead{color:var(--ink);font-size:18.5px;line-height:1.5}
+ul{margin:0 0 14px;padding-left:22px;color:var(--ink2)}
+li{margin-bottom:8px}
+strong{color:var(--ink);font-weight:600}
+.box{
+  margin:24px 0;padding:18px 20px;border:1px solid var(--rule);border-radius:12px;
+  background:var(--card);
+}
+.box p:last-child{margin-bottom:0}
+a{color:var(--accent)}
+footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--rule);color:var(--ink3);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <h1>HerbStat</h1>
+  <p class="sub">An index of published research on herbs, foods and supplements, for iPhone and iPad</p>
+
+  <p class="lead">HerbStat counts what has been published. For 979 remedies and 324 conditions it
+    shows how many papers exist, what they found, and what kind of studies they were — in people,
+    in animals, or only in the lab — with a link to every paper on PubMed.</p>
+
+  <div class="box">
+    <p><strong>This is a research index, not medical advice.</strong> HerbStat does not tell you
+      what to take, how much, or whether anything is safe or right for you. Talk to a doctor or
+      pharmacist before acting on anything you read in it.</p>
+  </div>
+
+  <h2>Support</h2>
+  <p>Questions, corrections or a paper you think is missing: write to
+    <a href="mailto:herbstat@tuta.com">herbstat@tuta.com</a>.
+    Corrections to the data are especially welcome; each one is read.</p>
+
+  <h2>Common questions</h2>
+  <p><strong>Does it need an internet connection?</strong> No. The whole database is inside the
+    app. Only the PubMed and DOI links open the web.</p>
+  <p><strong>What does the score mean?</strong> It is a weighted count of papers, not a verdict.
+    A high score means a lot has been published, not that something works. You can change every
+    weight in Settings, and turn on “Human studies only”.</p>
+  <p><strong>How often is it updated?</strong> The research is refreshed from PubMed and shipped
+    as an app update. Your saved items are kept across updates.</p>
+  <p><strong>Where are my saved items stored?</strong> On your device only. HerbStat has no
+    account and collects nothing — see the <a href="privacy.html">privacy policy</a>.</p>
+
+  <footer>HerbStat · <a href="privacy.html">Privacy policy</a></footer>
+</main>
+</body>
+</html>
