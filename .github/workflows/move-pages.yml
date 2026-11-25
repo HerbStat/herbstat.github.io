@@ -1,0 +1,31 @@
+# One-off: moves the pages uploaded into part1..part4 to where the site expects them.
+# Runs once, when this file is committed. Delete this file afterwards.
+name: Move uploaded pages into place
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/move-pages.yml']
+permissions:
+  contents: write
+jobs:
+  move:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Move the files and commit
+        run: |
+          set -euo pipefail
+          git clone --depth 1 "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" repo
+          cd repo
+          mkdir -p remedies
+          for p in part1 part2 part3 part4; do
+            git mv "$p"/remedies/* remedies/
+          done
+          git mv -f part4/index.html index.html
+          git mv part4/sitemap.xml sitemap.xml
+          git mv part4/robots.txt robots.txt
+          test "$(git ls-files 'part*' | wc -l)" -eq 0
+          test "$(git ls-files remedies | wc -l)" -eq 301
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Move remedy pages, home page, sitemap and robots.txt to the site root"
+          git push
